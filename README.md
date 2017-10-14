@@ -1,4 +1,6 @@
 # John Hopkins University Data Science 
 # Course 3 Getting and Cleansing Data
 
-This repository contains the submission for the week 4 assignment of the course. Please refer to the cookbook for details of the script.
+This repository contains the submission for the week 4 assignment of the course. 
+
+The repository includes 2 files: codebook.docx introduces the original dataset, the purpose of the study, and briefly describes the analytical process. It also includes an introduction of all variables included in the dataset. run_analysis.R includes the actual scripts to do the data cleansing.
