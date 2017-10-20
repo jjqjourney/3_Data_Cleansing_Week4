@@ -1,0 +1,111 @@
+---
+output:
+  word_document: default
+  html_document: default
+---
+
+# Codebook for assignment in "Getting and Cleaning Data", John Hopkins University
+
+## Data Set Information
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years[1]. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity were captured at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+
+## Analysis Process
+The data is first being downloaded from:
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+For each record it is provided:
+
+- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+- Triaxial Angular velocity from the gyroscope. 
+- A 561-feature vector with time and frequency domain variables. 
+- Its activity label. 
+- An identifier of the subject who carried out the experiment.
+
+The data cleansing is done by the following process:
+
+* Load the labels and features, strip off invalid characters
+* Read measurements which are std or means
+* Read training data and combine with their subjects
+* Read test data and combine with their subjects
+* Combine training and test datasets
+* Calculate the average of each acvitiby and each subject
+* OUput the dataset into "tidyDataSet.txt"
+
+## The variables in output file
+
+The output data file contains the following columns:
+
+* SubjectNum: the id of the experiment participant
+* ActivityName: the name of the acitivity that the measurements corresponds
+
+The following fields represent the mean of recorded datapoints for given subject and acitivities. The descriptions of the measurement can be found in features_info.txt in the original data set.
+
+* tBodyAcc-mean-X,
+* tBodyAcc-mean-Y,
+* tBodyAcc-mean-Z,
+* tBodyAcc-std-X,
+* tBodyAcc-std-Y,
+* tBodyAcc-std-Z,
+* tGravityAcc-mean-X,
+* tGravityAcc-mean-Y,
+* tGravityAcc-mean-Z,
+* tGravityAcc-std-X,
+* tGravityAcc-std-Y,
+* tGravityAcc-std-Z,
+* tBodyAccJerk-mean-X,
+* tBodyAccJerk-mean-Y,
+* tBodyAccJerk-mean-Z,
+* tBodyAccJerk-std-X,
+* tBodyAccJerk-std-Y,
+* tBodyAccJerk-std-Z,
+* tBodyGyro-mean-X,
+* tBodyGyro-mean-Y,
+* tBodyGyro-mean-Z,
+* tBodyGyro-std-X,
+* tBodyGyro-std-Y,
+* tBodyGyro-std-Z,
+* tBodyGyroJerk-mean-X,
+* tBodyGyroJerk-mean-Y,
+* tBodyGyroJerk-mean-Z,
+* tBodyGyroJerk-std-X,
+* tBodyGyroJerk-std-Y,
+* tBodyGyroJerk-std-Z,
+* tBodyAccMag-mean,
+* tBodyAccMag-std,
+* tGravityAccMag-mean,
+* tGravityAccMag-std,
+* tBodyAccJerkMag-mean,
+* tBodyAccJerkMag-std,
+* tBodyGyroMag-mean,
+* tBodyGyroMag-std,
+* tBodyGyroJerkMag-mean,
+* tBodyGyroJerkMag-std,
+* fBodyAcc-mean-X,
+* fBodyAcc-mean-Y,
+* fBodyAcc-mean-Z,
+* fBodyAcc-std-X,
+* fBodyAcc-std-Y,
+* fBodyAcc-std-Z,
+* fBodyAccJerk-mean-X,
+* fBodyAccJerk-mean-Y,
+* fBodyAccJerk-mean-Z,
+* fBodyAccJerk-std-X,
+* fBodyAccJerk-std-Y,
+* fBodyAccJerk-std-Z,
+* fBodyGyro-mean-X,
+* fBodyGyro-mean-Y,
+* fBodyGyro-mean-Z,
+* fBodyGyro-std-X,
+* fBodyGyro-std-Y,
+* fBodyGyro-std-Z,
+* fBodyAccMag-mean,
+* fBodyAccMag-std,
+* fBodyBodyAccJerkMag-mean,
+* fBodyBodyAccJerkMag-std,
+* fBodyBodyGyroMag-mean,
+* fBodyBodyGyroMag-std,
+* fBodyBodyGyroJerkMag-mean,
+* fBodyBodyGyroJerkMag-std
+
+## Reference
+[1]https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
